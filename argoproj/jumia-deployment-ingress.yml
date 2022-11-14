@@ -7,8 +7,13 @@ metadata:
     app: nginx
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts: 
+    - home.apikongapp.uml
+    - services.apikongapp.ml
+    secretName: cluster-issuer-secret-key 
   rules:
-    - host: home.apikongapp.ui
+    - host: home.apikongapp.ml
       http:
         paths:
           - path: "/"
@@ -18,7 +23,7 @@ spec:
                name: jumia-service-deployment
                port:
                  number: 8081
-    - host: services.apikongapp.ui
+    - host: services.apikongapp.ml
       http:
         paths:
           - path: "/"
