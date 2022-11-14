@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jumia-application-ingress
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: home.apikongapp.ui
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+             service:
+               name: jumia-service-deployment
+               port:
+                 number: 8081
+    - host: services.apikongapp.ui
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+             service:
+               name: jumia-service-deployment
+               port:
+                 number: 8080
