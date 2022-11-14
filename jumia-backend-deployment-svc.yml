@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jumia-backend-service-deployment
+  namespace: microservice
+spec:
+  selector:
+    app: nginx-backend
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    nodePort: 32001
+
+    #helm rollback release revision --namespace <namespace>
