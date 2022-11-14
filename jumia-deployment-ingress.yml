@@ -27,4 +27,4 @@ spec:
              service:
                name: jumia-service-deployment
                port:
-                 number: 8000
+                 number: 8080
