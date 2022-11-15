@@ -9,7 +9,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts: 
-    - home.apikongapp.uml
+    - home.apikongapp.ml
     - services.apikongapp.ml
     secretName: cluster-issuer-secret-key 
   rules:
