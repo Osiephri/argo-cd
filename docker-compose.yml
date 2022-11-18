@@ -1,0 +1,19 @@
+version: '3'
+services:
+   web:
+      image: nginx:alpine
+      ports:
+        - 81:80
+        - 8081:80
+        - 8001:80
+      container_name: my_nginx_test
+      tty: true
+      stdin_open: true
+      command: mkdir /data
+      #volumes:
+      #  - .:/usr/share/nginx
+      #networks:
+      # - app_network
+#networks:
+#  app_network:
+#    driver: bridge

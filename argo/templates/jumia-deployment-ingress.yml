@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: jumia-application-ingress
   namespace: {{ .Values.namespace }}
+  #annotations: kubernetes.nginx.io/rewrite-target: /
+  annotations: nginx.ingress.kubernetes.io/rewrite-target: /
   labels:
     app: nginx
 spec:
